@@ -1,0 +1,27 @@
+observables is ${{ state }}$;
+
+isDefined is function {
+	local t1;
+	t1 = $1;
+	return ${{ rt.def_cache.hasOwnProperty(t1) }}$;
+};
+
+exists is function {
+	local t1;
+	t1 = $1;
+	return ${{ rt.state.hasOwnProperty(t1) }}$;
+};
+
+sourceOf is `{$1}:active [source]`[1];
+
+definitionOf is function {
+	local t1;
+	t1 = $1;
+	return sourceOf(t1);
+}
+
+dependenciesOf is @;
+dependantsOf is `.depends({$1}) [name]`;
+expressionOf is `{$1} [rhs]`[1];
+astOf is `{$1}`[1];
+

@@ -1,0 +1,128 @@
+PI = ${{ Math.PI }}$
+
+function sin {
+	var t1;
+	t1 = $1;
+	return ${{ Math.sin(t1 / 180 * Math.PI) }}$;
+}
+
+function cos {
+	var t1;
+	t1 = $1;
+	return ${{ Math.cos(t1 / 180 * Math.PI) }}$;
+}
+
+function tan {
+	var t1;
+	t1 = $1;
+	return ${{ Math.tan(t1) }}$;
+}
+
+function asin {
+	var t1;
+	t1 = $1;
+	return ${{ Math.asin(t1) }}$;
+}
+
+function acos {
+	var t1;
+	t1 = $1;
+	return ${{ Math.acos(t1) }}$;
+}
+
+function atan {
+	var t1;
+	t1 = $1;
+	return ${{ Math.atan(t1) }}$;
+}
+
+function atan2 {
+	var t1;
+	t1 = $1;
+	return ${{ Math.atan2(t1) }}$;
+}
+
+function ln {
+	var t1;
+	t1 = $1;
+	return 0;
+}
+
+function log {
+	var t1;
+	t1 = $1;
+	return ${{ Math.log(t1) }}$;
+}
+
+function floor {
+	var t1;
+	t1 = $1;
+	return ${{ Math.floor(t1) }}$;
+}
+
+function ceil {
+	var t1;
+	t1 = $1;
+	return ${{ Math.ceil(t1) }}$;
+}
+
+function round {
+	var t1;
+	t1 = $1;
+	return ${{ Math.round(t1) }}$;
+}
+
+roundDown is floor;
+roundUp is ceil;
+
+function abs {
+	var t1;
+	t1 = $1;
+	return ${{ Math.abs(t1) }}$;
+}
+
+function exp {
+	var t1;
+	t1 = $1;
+	return ${{ Math.exp(t1) }}$;
+}
+
+function max {
+	return $1 if $1 > $2 else $2;
+}
+
+function min {
+	return $2 if $1 > $2 else $1;
+}
+
+function pow {
+	var t1,t2;
+	t1 = $1;
+	t2 = $2;
+	return ${{ Math.pow(t1, t2) }}$;
+}
+
+function sqrt {
+	var t1;
+	t1 = $1;
+	return ${{ Math.sqrt(t1) }}$;
+}
+
+function sum {
+	var total,i;
+	total = 0;
+
+	for (i=1; i<=$1#; i++) {
+		total = total + $1[i];
+	}
+
+	return total;
+}
+
+randomInteger is function {
+	local t1,t2;
+	t1 = $1;
+	t2 = $2;
+	return ${{ Math.floor(Math.random() * (t2-t1+1) + t1) }}$;
+};
+

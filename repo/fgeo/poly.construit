@@ -1,0 +1,27 @@
+use webgl > :(Shape, Mesh);
+use fgeo > isosurface > marchcubes;
+
+density = 50;
+bound_min = -12;
+bound_max = 12;
+bound_range is bound_max - bound_min;
+bound_scale = 2;
+
+x is [i / density * bound_range*bound_scale + bound_min*bound_scale ,
+		j / density * bound_range*bound_scale + bound_min*bound_scale,
+		k / density * bound_range*bound_scale + bound_min*bound_scale];
+
+sample is model(i in 1..density, j in 1..density, k in 1..density);
+
+surface is IsoSurfaceMC(sample, density, bound_min, bound_range);
+verts is surface[1];
+normals is surface[2];
+
+uvmap is (0 if ix%2 == 0 else 1.0)(ix in 1..(verts#/3*2));
+uvmapobj is UVMap(uvmap);
+
+#! Create a CSG Mesh #library
+FGeoMesh is [Mesh(verts,normals=normals,kind="triangles"), uvmapobj];
+
+#! Create a CSG Mesh Instance  #library
+FGeoShape is Shape(FGeoMesh[1], $1,uvmap=FGeoMesh[2]);

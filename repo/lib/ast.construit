@@ -1,0 +1,21 @@
+hasErrors is $1.errors# > 0 if $1 else @;
+getError is $1.errors[1] if $1 else @;
+isScript is $1.type == "block" if $1 else @;
+isDefinition is $1.type == "definition" if $1 else @;
+isAssignment is $1.type == "assignment" if $1 else @;
+hasName is isDefinition || isAssignment;
+name is $1.lvalue.name if $1 else @;
+hasComment is $1.doxyComment != @ if $1 else @;
+
+source is function {
+	local t1;
+	t1 = $1;
+	return ${{ t1.getSource() }}$;
+} if $1 else @;
+
+comment is function {
+	local t1;
+	t1 = $1;
+	return ${{ t1.doxyComment.stripped() }}$;
+}  if $1 else @;
+

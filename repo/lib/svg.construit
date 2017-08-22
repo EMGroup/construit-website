@@ -1,0 +1,13 @@
+Svg is <svg xmlns="http://www.w3.org/2000/svg" width={$1} height={$2}>{content}</svg>
+Circle is <circle xmlns="http://www.w3.org/2000/svg" cx={$1} cy={$2} r={$3} style={"fill: "//($4 if $4 else "black")//";"} />;
+Rectangle is <rect xmlns="http://www.w3.org/2000/svg" x={$1} y={$2} width={$3} height={$4} style={"fill: "//($5 if $5 else "black")//";"} />;
+Text is 
+	<text xmlns="http://www.w3.org/2000/svg" x={$2} y={$3} font-family="Helvetica" font-size={$4 if $4 else "12"}>{$1}</text>
+	if $6 != "middle center" else
+	<text xmlns="http://www.w3.org/2000/svg" x={$2} y={$3} font-family="Helvetica" font-size={$4 if $4 else "12"} text-anchor="middle" alignment-baseline="central">{$1}</text>;
+
+Image is <image href={$5} x={$1} y={$2} width={$3} height={$4} />;
+
+Line is <path xmlns="http://www.w3.org/2000/svg" d={"M "//$1//" "//$2//" L "//$3//" "//$4} />;
+
+

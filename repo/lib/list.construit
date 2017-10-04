@@ -1,9 +1,9 @@
-unique is @;
+unique is @.
 sort is function {
-	local t1;
-	t1 = $1;
-	return ${{ t1.sort() }}$;
-}
+	local t1.
+	t1 = $1.
+	return ${{ t1.sort() }}$.
+}.
 
-tail is @;
+tail is @.
 

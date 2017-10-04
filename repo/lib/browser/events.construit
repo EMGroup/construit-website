@@ -1,1 +1,1 @@
-valueOf is $1.target.value;
+valueOf is $1->target->value.

@@ -1,13 +1,13 @@
 getElementById is function {
-	local t1;
-	t1 = $1;
-	return ${{ document.getElementById(t1) }}$;
-}
+	local t1.
+	t1 = $1.
+	return ${{ document.getElementById(t1) }}$.
+}.
 
 attribute is function {
-	local t1,t2;
-	t1 = $1;
-	t2 = $2;
-	return ${{ t1.getAttribute(t2) }}$ if t1 && t2 else @;
-}
+	local t1,t2.
+	t1 = $1.
+	t2 = $2.
+	return ${{ t1.getAttribute(t2) }}$ if t1 && t2 else @.
+}.
 

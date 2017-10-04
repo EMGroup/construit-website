@@ -1,0 +1,14 @@
+type = "literal".
+datatype = "number".
+value = 0.
+errors = [].
+
+Literal is {
+	type, datatype, value, errors
+}.
+
+Number is Literal(value=$1).
+String is Literal(datatype="string",value=$1).
+List is Literal(datatype="list",value=$1).
+Bool is Literal(datatype="boolean",value=$1).
+

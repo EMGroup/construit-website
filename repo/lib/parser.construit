@@ -1,24 +1,29 @@
-function parse {
-	var t1;
-	t1 = $1;
-	return ${{ Construit.parser.parse(t1) }}$ if t1 else @;
-}
+function parseNative {
+	var t1.
+	t1 = $1.
+	return ${{ Construit.parser.parse(t1) }}$ if t1 else @.
+}.
+
+tokens is tokenise(script).
+next is tokens[position].
+parse is parseNative.
+
 
 function parseExpr {
-	var t1;
-	t1 = $1;
-	return ${{ Construit.parser.parseExpression(t1) }}$ if t1 else @;
-}
+	var t1.
+	t1 = $1.
+	return ${{ Construit.parser.parseExpression(t1) }}$ if t1 else @.
+}.
 
 function evalExpr {
-	var t1;
-	t1 = $1;
-	return ${{ Construit.translator.evalExpression(t1, rt) }}$ if t1 else @;
-}
+	var t1.
+	t1 = $1.
+	return ${{ Construit.translator.evalExpression(t1, rt) }}$ if t1 else @.
+}.
 
 function tokenise {
-	var t1;
-	t1 = $1;
-	return ${{ Construit.lexer.tokenise(t1) }}$ if t1 else @;
-}
+	var t1.
+	t1 = $1.
+	return ${{ Construit.lexer.tokenise(t1) }}$ if t1 else @.
+}.
 

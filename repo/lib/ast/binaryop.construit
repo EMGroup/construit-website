@@ -1,0 +1,25 @@
+op = "==".
+type = "binaryop".
+left = @.
+right = @.
+errors is left->errors || right->errors.
+warning is left->warning || right->warning.
+
+BinaryOp is {
+	type, op, left, right, errors, warning
+}.
+
+Add is BinaryOp(op="+",left=$1, right=$2).
+Subtract is BinaryOp(op="-",left=$1, right=$2).
+Multiply is BinaryOp(op="*",left=$1, right=$2).
+Divide is BinaryOp(op="/",left=$1, right=$2).
+Modulus is BinaryOp(op="%",left=$1, right=$2).
+Equal is BinaryOp(op="==",left=$1, right=$2).
+NotEqual is BinaryOp(op="!=",left=$1, right=$2).
+Less is BinaryOp(op="<",left=$1, right=$2).
+Greater is BinaryOp(op=">",left=$1, right=$2).
+LessEqual is BinaryOp(op="<=",left=$1, right=$2).
+GreaterEqual is BinaryOp(op=">=",left=$1, right=$2).
+And is BinaryOp(op="&&",left=$1, right=$2).
+Or is BinaryOp(op="||",left=$1, right=$2).
+

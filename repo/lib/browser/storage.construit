@@ -1,6 +1,6 @@
 read is function {
-	local t1;
-	t1 = $1;
-	return ${{ window.localStorage[t1] }}$;
-};
+	local t1.
+	t1 = $1.
+	return ${{ window.localStorage[t1] }}$.
+}.
 
